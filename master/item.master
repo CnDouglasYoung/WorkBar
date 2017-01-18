@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/master/zhuye.master" AutoEventWireup="true" CodeFile="item.master.cs" Inherits="MasterPage2" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <style type="text/css">
+   button:hover{
+   cursor:pointer;
+    }
+           a{
+               text-decoration:none;
+               color:black;
+           }
+         a:hover{
+     cursor:pointer;
+     color :#F29503
+        }
+#cd {background-color:#ECF0F5; width:760px; height:40px; margin:0 auto;}
+#cd ul {list-style:none;float:left;
+            width: 501px;
+            height: 40px;
+        }
+#cd ul li{ line-height:35px; text-align:center;float:left;margin:0px 2px;}
+ .unselect{ text-decoration:none; color:black; display:block; width:90px;}
+ .unselect:hover {color :white;background-color:#666;}
+#qh {border-style: none;
+            border-color: inherit;
+            border-width: medium;
+            position:absolute;
+            top: 5px;
+            right: 0px;
+            width: 277px;
+     }
+#DropDownList1 {border:none}       
+ .Ldrop{
+     border:none;
+     background-color:#ECF0F5;
+ }
+</style>
+    <div id="cd">
+             <ul>
+                 <li id="li1" runat="server">
+                     <asp:LinkButton ID="LinkButton18" runat="server" CssClass="unselect"  OnClick="LinkButton18_Click">任务</asp:LinkButton>
+                 </li>
+                 <li>
+                     <asp:LinkButton ID="LinkButton19" runat="server" CssClass="unselect"  OnClick="LinkButton19_Click">文件</asp:LinkButton>
+                 </li>
+                 <!--
+                 <li>
+                     <asp:LinkButton ID="LinkButton20" runat="server" CssClass="e">进展</asp:LinkButton>
+                 </li>
+                     -->
+                 <li>
+                     <asp:LinkButton ID="LinkButton21" runat="server" CssClass="unselect"  OnClick="LinkButton21_Click">项目详情</asp:LinkButton>
+                 </li>
+                 
+                 
+                 
+             </ul>
+        <div id="qh" style="padding-top: 5px; height: 30px; left: 483px; background-color: #DED9FF;">
+            <asp:Label ID="Label1" runat="server" Text="当前项目：" BorderStyle="None" Font-Size="Medium" Height="24px" Width="81px"></asp:Label>
+
+            <asp:DropDownList ID="DropDownList1" runat="server" CssClass="Ldrop"  Width="170px" BackColor="#ECF0F5" DataSourceID="SqlDataSourcea" DataTextField="Name" DataValueField="ItemId"  OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" Font-Size="Medium" OnDataBinding="DropDownList1_DataBinding" AutoPostBack="True" ></asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSourcea" runat="server" ConnectionString="<%$ ConnectionStrings:默认 %>" SelectCommand="SELECT   Item.Name, Item.ItemId
+FROM      Item_User INNER JOIN
+                Item ON Item_User.ItemId = Item.ItemId
+WHERE   Item_User.UID=@UID AND Item_User.IsAccept=1">
+                        <SelectParameters>
+                            <asp:SessionParameter Name="UID" SessionField="UID" />
+                        </SelectParameters>
+                    </asp:SqlDataSource>
+            </div>
+        </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+
+</asp:Content>
+

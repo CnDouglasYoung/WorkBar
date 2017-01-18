@@ -1,0 +1,184 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage3.master.cs" Inherits="母版页_MasterPage3" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<style type="text/css">
+   
+*{ margin:0px; padding:0px;font-family:'Microsoft YaHei UI';font-size:small}
+/*上面部分*/
+ #shanglan { background-color:#3c8dbc; width:960px; height:40px;}
+ #logo {list-style:none;font-family:'Bauhaus 93';color:white;font-size:30px;position:absolute;
+        top: 0px;
+        left: 38px;
+    }
+ #sousuokuang {position:absolute;
+        top: 5px;
+        left: 550px;
+        width: 165px;
+        height: 25px;
+    }
+ #sousuo {position:absolute;
+        top: 5px;
+        left: 730px;
+        height: 25px;
+        width: 25px;
+    }
+ #tianjia {position:absolute;
+              top: -28px;
+        left: 804px;
+    }
+ #jishi {position:absolute;
+            top: 10px;
+        left: 860px;
+    }
+ #shezhi {position:absolute;
+             top:10px;
+             left:900px;
+    }
+#tj{ width:164px; 
+height:200px; margin:0; 
+position:absolute;
+             top:10px;
+             left:792px;
+             z-index:1000
+    }
+#tj ul{ list-style:none;}
+#tj ul li{ width:40px; text-align:center; position:relative; float:left;height:40px}
+.c{ text-decoration:none; color:#ffffff; display:block; width:60px;}
+.c:hover{ color:#FFF; background-color:#666666;}
+#tj ul li ul li{ float:none;background-color:#3c8dbc;text-align:center;margin-top:2px; line-height:30px;width:60px} 
+#tj ul li ul{background-color:#3c8dbc;
+    width:60px; position:absolute;
+        top: 28px;
+        left: -9px;
+       display:none;
+
+}
+#tj ul li:hover ul{display:block}
+/*左边部分*/
+#menu{ background-color:#1e282c; width:200px; height:640px; margin:0 ;}
+#menu ul{ list-style:none;}
+#menu ul li{ line-height:40px; text-align:center; position:relative;}
+.b{ text-decoration:none; color:#ffffff; display:block; width:200px;}
+.b:hover{ color:#FFF; background-color:#666666;}
+#menu ul li ul li{ float:none;background-color:#1e282c; margin-top:2px;} 
+#menu ul li ul{width:200px; position:absolute;
+        top: -1px;
+        left: 201px;
+       display:none;
+       z-index:1000
+         }
+#menu ul li:hover ul{display:block}
+/*中间部分*/       
+.back {background-color:#ecf0f5; width:760px; height:640px;position:absolute;
+        top: 40px;
+        left: 200px;
+    }
+#cd {background-color:#eee; width:760px; height:40px; margin:0 auto;}
+#cd ul {list-style:none;float:left;}
+#cd ul li{ line-height:40px; text-align:center;float:left;}
+ .d{ text-decoration:none; color:#000; display:block; width:90px;}
+ .d:hover {color :white;background-color:#666;}
+        #LinkButton16:hover{color :white;background-color:#f29503;}
+        #LinkButton17:hover{color :white;background-color:#44b6ae;}
+        #LinkButton18:hover{color :white;background-color:#8775a7;}
+       
+
+</style>
+</head>
+
+<body>
+<form id="form1" runat="server">
+
+<div id="shanglan"> 
+<p id="logo">workbar</p>
+
+       
+            <asp:TextBox ID="sousuokuang" runat="server" BorderStyle="None" Font-Underline="True"></asp:TextBox>
+            <asp:ImageButton ID="sousuo" runat="server" ImageUrl="~/img/sousuo.png" />
+           
+</div>
+
+<div runat="server" id="tj">  
+<ul runat="server">
+      <li runat="server">
+          <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img/添加.jpg" />
+               <ul runat="server">
+                  <li runat="server"> <asp:LinkButton ID="LinkButton1" runat="server" CssClass="c">项目</asp:LinkButton></li>
+                  <li runat="server"> <asp:LinkButton ID="LinkButton2" runat="server" CssClass="c">任务</asp:LinkButton></li>
+                  <li runat="server"> <asp:LinkButton ID="LinkButton3" runat="server" CssClass="c">文件</asp:LinkButton></li>
+                  <li runat="server"> <asp:LinkButton ID="LinkButton4" runat="server" CssClass="c">日程</asp:LinkButton></li>
+               </ul>
+      </li>
+      <li runat="server">
+          <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img/集市.jpg" />
+      </li>       
+      <li runat="server">   
+         <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img/设置.jpg" />
+      </li>
+</ul>          
+</div> 
+
+<div runat="server" id="menu">
+<ul runat="server">
+ 
+  <li runat="server">
+       <asp:LinkButton ID="LinkButton5" runat="server" CssClass="b">首页</asp:LinkButton></li>
+  <li runat="server">
+       <asp:LinkButton ID="LinkButton6" runat="server" CssClass="b">项目</asp:LinkButton></li>
+  <li runat="server">
+       <asp:LinkButton ID="LinkButton7" runat="server" CssClass="b">动态</asp:LinkButton>
+    <ul runat="server">
+      <li runat="server" >
+           <asp:LinkButton ID="LinkButton8" runat="server" CssClass="b">站内信</asp:LinkButton></li>
+      <li runat="server">
+           <asp:LinkButton ID="LinkButton9" runat="server" CssClass="b">通知</asp:LinkButton></li>
+      <li runat="server">
+           <asp:LinkButton ID="LinkButton10" runat="server" CssClass="b">公告</asp:LinkButton></li>
+    </ul>
+  </li>
+  <li runat="server">
+    <asp:LinkButton ID="LinkButton11" runat="server" CssClass="b">我的</asp:LinkButton>
+    <ul runat="server">
+    <li runat="server">
+        <asp:LinkButton ID="LinkButton12" runat="server" CssClass="b">任务</asp:LinkButton></li>
+    <li runat="server">
+         <asp:LinkButton ID="LinkButton13" runat="server" CssClass="b">日程</asp:LinkButton></li>
+    <li runat="server">
+         <asp:LinkButton ID="LinkButton14" runat="server" CssClass="b">日历</asp:LinkButton></li>
+    </ul>
+  </li>
+  <li runat="server">
+        <asp:LinkButton ID="LinkButton15" runat="server" CssClass="b">讨论</asp:LinkButton></li>
+</ul>
+</div> 
+             
+       <div  class="back">
+           <div runat="server" id="cd">
+             <ul runat ="server">
+                 <li runat ="server">
+                     <asp:LinkButton ID="LinkButton16" runat="server" CssClass="d">站内信页</asp:LinkButton>
+                 </li>
+                 <li runat="server">
+                     <asp:LinkButton ID="LinkButton17" runat="server" CssClass="d">通知</asp:LinkButton>
+                 </li>
+                 <li runat="server">
+                     <asp:LinkButton ID="LinkButton18" runat="server" CssClass="d">公告</asp:LinkButton>
+                 </li>
+                 
+                 
+             </ul>
+        </div>
+
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         </asp:ContentPlaceHolder>
+        </div> 
+</form>
+</body>
+</html>
+

@@ -1,0 +1,356 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true"  CodeFile="zhuye.master.cs" Inherits="MasterPage" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title></title>
+<style type="text/css">
+
+   button:hover{
+   cursor:pointer;
+    }
+           a{
+               text-decoration:none;
+               color:black;
+           }
+         a:hover{
+     cursor:pointer;
+     color :#F29503
+        }
+    *{ margin:0px; padding:0px;font-family:'Microsoft YaHei UI';font-size:small}
+    .kuang{
+            margin:15px;
+        }
+    .biaoti{
+            font-size:x-large;
+            border-bottom:solid;
+            border-color:#3c8dbc;
+            padding-left:10px;
+        }
+    .tijiao{
+            background-color:#F08200;
+            border-style:None;
+            font-size:large;
+           color:white;
+           width:75px; 
+        }
+    .xuan{
+            font-size:medium;
+        }
+/*上面部分*/
+ #shanglan { background-color:#3c8dbc; width:960px; height:40px;}
+ #logo {list-style:none;font-family:'Bauhaus 93';color:white;font-size:30px;position:absolute;
+        top: 0px;
+        left: 47px;
+    }
+ #sousuokuang {position:absolute;
+        top: 5px;
+        left: 550px;
+        width: 165px;
+        height: 25px;
+    }
+ #sousuo {position:absolute;
+        top: 5px;
+        left: 730px;
+        height: 25px;
+        width: 25px;
+        right: 207px;
+    }
+ #tianjia {position:absolute;
+              top: -28px;
+        left: 804px;
+    }
+ #jishi {position:absolute;
+            top: 10px;
+        left: 860px;
+    }
+ #shezh {position:absolute;
+             top:10px;
+             left:900px;
+    }
+#tj{ width:179px; 
+height:200px; margin:0; 
+position:absolute;
+             top:7px;
+             left:778px;
+             /*z-index:1000*/
+    }
+#tj ul{ list-style:none;}
+#tj ul li{ width:50px; text-align:center; position:relative; float:left;height:37px;
+        top: 0px;
+        left: 0px;
+        margin-right:5px
+    }
+.c{ text-decoration:none; color:#ffffff; display:block; width:50px;}
+.c:hover{ color:#FFF; background-color:#666666;}
+#tj ul li ul li{ float:none;background-color:#3c8dbc;text-align:center;margin-top:2px; line-height:30px;width:50px} 
+#tj ul li ul{background-color:#3c8dbc;
+    width:50px; position:absolute;
+        top: 31px;
+        left: 1px;
+       display:none;
+       z-index:1000
+    }
+#tjli:hover ul{display:block}
+#shezhi {background-color:#3c8dbc;
+width:95px;
+height: 117px; 
+position:absolute;
+        top: 33px;
+        right:-22px;
+ /*-moz-border-radius: 15px; 
+  -webkit-border-radius: 15px; 
+  border-radius:15px;*/ 
+display:none;
+ z-index:1000
+    }
+.arrow-up {
+    width:0; 
+    height:0; 
+    border-left:10px solid transparent;
+    border-right:10px solid transparent;
+    border-bottom:10px solid #3c8dbc;
+    position:absolute;
+        top: 23px;
+        left: 11px;
+        display:none;
+        z-index:1000
+    }
+#szli:hover #shezhi{display:block}
+#szli:hover .arrow-up{display:block}
+
+ #sz {height:46px;
+         width:100px;
+         padding:0px;
+         margin:0px;
+    } 
+
+.d{ text-decoration:none; color:#ffffff; display:block; text-align:center;}
+.d:hover{ color:#1e282c;}
+
+
+
+div.icon 
+{
+width:60px;
+height:60px;
+display:block;
+position: relative;
+float:left;
+padding: 0px;
+margin:5px 20px;
+background:#3c8dbc;
+}
+ 
+div.icon_head
+{
+width:60px;
+height: 60px;
+display:block;
+position: relative;
+float:left;
+padding: 0px;
+margin: 0px;
+background: #bde9df;
+border-radius:75px;
+-webkit-border-radius:75px;
+-moz-border-radius:75px;
+-o-border-radius:75px;
+-webkit-background-clip:padding; 
+overflow:hidden;
+}
+ 
+a.trans_name
+{
+width:60px;
+height: 60px;
+display:block;
+position: absolute;
+left: 0px;
+bottom: 0px;
+padding: 0px;
+margin: 0px;
+z-index:1;
+filter: Alpha(Opacity=0);
+opacity:0; 
+}
+ 
+span.icon_translucent
+{
+width:60px;
+height: 30px;
+display:block;
+position: absolute;
+left: 0px;
+bottom: 0px;
+padding: 0px;
+background: #000000;
+z-index:2;
+filter: Alpha(Opacity=50);
+opacity:0.5;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+    }
+span.icon_name
+{
+width:60px;
+height: 30px;
+display:block;
+position: absolute;
+left: 0px;
+bottom: 0px;
+padding: 0px;
+margin: 0px;
+color: #ffffff;
+font-size: 16px;
+text-align: center;
+line-height: 20px;
+z-index:3;
+}
+
+ 
+a.trans_name:hover 
+{
+filter: Alpha(Opacity=100);
+opacity:1; 
+}
+
+/*左边部分*/
+#menu{ background-color:#1e282c; width:200px; height:640px; margin:0 ;}
+#menu ul{ list-style:none;}
+#menu ul li{ line-height:40px; text-align:center; position:relative;}
+.b{ text-decoration:none; color:#ffffff; display:block; width:200px;}
+.b:hover{ color:#FFF; background-color:#666666;}
+#menu ul li ul li{ float:none;background-color:#1e282c; margin-top:2px;} 
+#menu ul li ul{width:200px; position:absolute;
+        top: -1px;
+        left: 201px;
+       display:none;
+       z-index:1000
+         }
+#menu ul li:hover ul{display:block}
+/*中间部分*/       
+.back {background-color:#ecf0f5; width:760px; height:640px;position:absolute;
+        top: 40px;
+        left: 200px;
+    }
+ .select{
+     border-bottom:solid;border-bottom-color:#4889AE;background-color:#666
+ }
+ .unselect{
+     border-bottom:solid;border-bottom-color:#4889AE;background-color:#DED9FF
+ }
+ 
+
+</style>
+</head>
+
+<body>
+<form id="form1" runat="server">
+
+<div id="shanglan"> 
+<p id="logo">workbar</p>
+
+            <asp:TextBox ID="sousuokuang" runat="server" BorderStyle="None" Font-Underline="True" Height="28px"></asp:TextBox>
+            <asp:ImageButton ID="sousuo" runat="server" ImageUrl="~/img/Icon/searchw.png" />
+           
+</div>
+
+<div runat="server" id="tj">  
+<ul runat="server">
+      <li runat="server" id="tjli">
+          <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="~/img/Icon/addw.png" Height="25px" Width="25px" />
+               <ul runat="server">
+                  <li runat="server"> <asp:LinkButton ID="LinkButton1" runat="server" CssClass="c" PostBackUrl="~/item/item-add.aspx">项目</asp:LinkButton></li>
+                  <li runat="server"> <asp:LinkButton ID="LinkButton2" runat="server" CssClass="c" PostBackUrl="~/item/ass-add.aspx">任务</asp:LinkButton></li>
+                  <li runat="server"> <asp:LinkButton ID="LinkButton3" runat="server" CssClass="c" PostBackUrl="~/item/file-add.aspx">文件</asp:LinkButton></li>
+                  <li runat="server"> <asp:LinkButton ID="LinkButton4" runat="server" CssClass="c" PostBackUrl="~/mine/sch-add.aspx" >日程</asp:LinkButton></li>
+               </ul>
+      </li>
+      <li runat="server">
+          <asp:ImageButton ID="ImageButton2" runat="server" ImageUrl="~/img/Icon/storew.png" PostBackUrl="~/market/Default.aspx" Height="25px" Width="25px" />
+      </li>       
+      <li runat="server" id="szli">   
+         <asp:ImageButton ID="ImageButton3" runat="server" ImageUrl="~/img/Icon/setw.png" Height="25px" Width="25px" />
+  <div class="arrow-up">
+     <!--向上的三角-->
+          </div>      
+<div runat="server" id="shezhi">   
+        
+   <div runat="server" class="icon">
+    <div runat="server" class="icon_head">
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/img/doge.jpg" Height="60px" Width="60px" />
+    <a runat="server" class="trans_name">
+      <span class="icon_translucent"></span>
+        <span runat="server" class="icon_name">
+            <asp:Label ID="Label1" runat="server" Text="用户名"></asp:Label>
+        </span>
+    </a>   
+   </div> 
+  </div>
+   
+     <div id="sz">
+       
+        <asp:LinkButton ID="LinkButton16" runat="server" CssClass="d" Height="23px" Width="95px" Font-Size="X-Small" PostBackUrl="~/user-install.aspx">个人设置</asp:LinkButton>
+        <asp:LinkButton ID="LinkButton17" runat="server" CssClass="d" Height="23px" Width="100px" Font-Size="X-Small"  OnClick="LinkButton17_Click">退出登录</asp:LinkButton>
+     
+   </div>
+   
+</div>
+      </li>
+ 
+
+</ul> 
+             
+
+</div> 
+
+
+
+
+<div runat="server" id="menu">
+<ul runat="server">
+ 
+  
+       
+  <li runat="server">
+       <asp:LinkButton ID="LinkButton6" runat="server" CssClass="b"  OnClick="LinkButton6_Click1" >项目</asp:LinkButton></li>
+  <li runat="server">
+       <asp:LinkButton ID="LinkButton7" runat="server" CssClass="b"   OnClick="LinkButton6_Click" >动态</asp:LinkButton>
+    <ul runat="server">
+      <li runat="server" >
+           <asp:LinkButton ID="LinkButton8" runat="server" CssClass="b"  OnClick="LinkButton6_Click">站内信</asp:LinkButton></li>
+      <li runat="server">
+           <asp:LinkButton ID="LinkButton9" runat="server" CssClass="b"  OnClick="LinkButton9_Click">通知</asp:LinkButton></li>
+      <li runat="server">
+           <asp:LinkButton ID="LinkButton10" runat="server" CssClass="b"  OnClick="LinkButton10_Click">公告</asp:LinkButton></li>
+    </ul>
+  </li>
+  <li runat="server">
+    <asp:LinkButton ID="LinkButton11" runat="server" CssClass="b"  OnClick="LinkButton11_Click">我的</asp:LinkButton>
+    <ul runat="server">
+    <li runat="server">
+        <asp:LinkButton ID="LinkButton12" runat="server" CssClass="b"  OnClick="LinkButton11_Click">任务</asp:LinkButton></li>
+    <li runat="server">
+         <asp:LinkButton ID="LinkButton13" runat="server" CssClass="b"  OnClick="LinkButton13_Click">日程</asp:LinkButton></li>
+    <li runat="server">
+         <asp:LinkButton ID="LinkButton14" runat="server" CssClass="b"  OnClick="LinkButton14_Click">日历</asp:LinkButton></li>
+    </ul>
+  </li>
+  <li runat="server">
+        <asp:LinkButton ID="LinkButton15" runat="server" CssClass="b" PostBackUrl="~/taolun1.aspx">讨论</asp:LinkButton></li>
+</ul>
+</div> 
+             
+       <div  class="back">
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+         </asp:ContentPlaceHolder>
+        </div> 
+</form>
+</body>
+</html>
+

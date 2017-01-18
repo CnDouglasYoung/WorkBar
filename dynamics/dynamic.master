@@ -1,0 +1,5 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/master/zhuye.master" AutoEventWireup="true" CodeFile="dynamic.master.cs" Inherits="母版2_0_dynamic" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+</asp:Content>
+

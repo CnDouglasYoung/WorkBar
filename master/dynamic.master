@@ -1,0 +1,46 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/master/zhuye.master" AutoEventWireup="true" CodeFile="dynamic.master.cs" Inherits="母版2_0_dynamic" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <style type="text/css">
+    button:hover{
+   cursor:pointer;
+    }
+           a{
+               text-decoration:none;
+               color:black;
+           }
+         a:hover{
+     cursor:pointer;
+     color :#F29503
+        }
+#cd {background-color:#ECF0F5;width:760px; height:40px; margin:0 auto;}
+#cd ul {list-style:none;float:left;
+            width: 450px;
+            height:40px;
+        }
+#cd ul li{ line-height:35px; text-align:center;float:left;margin:0px 2px;border-bottom:solid;border-bottom-color:#4889AE;background-color:#DED9FF}
+ .e{ text-decoration:none; color:#000; display:block; width:90px;}
+ .e:hover {color :white;background-color:#666;}
+
+
+</style>
+    <div id="cd">
+             <ul>
+                 <li>
+                     <asp:LinkButton ID="LinkButton18" runat="server" CssClass="e" PostBackUrl="~/dynamics/letter.aspx">站内信</asp:LinkButton>
+                 </li>
+                 <li>
+                     <asp:LinkButton ID="LinkButton19" runat="server" CssClass="e" PostBackUrl="~/dynamics/attention.aspx" >通知</asp:LinkButton>
+                 </li>
+                 <li>
+                     <asp:LinkButton ID="LinkButton20" runat="server" CssClass="e" PostBackUrl="~/dynamics/notice.aspx">公告</asp:LinkButton>
+                 </li>
+                
+                 
+             </ul>
+       
+        </div>
+
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+</asp:Content>
+
